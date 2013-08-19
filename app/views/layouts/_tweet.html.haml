@@ -1,0 +1,17 @@
+- user_names = ["Josh Randall", "Vinchensso Capistrano", "Izyaslav Zhukovski"]
+- tweets = ["Using the @Divshot #TwitterBootstrap UI builder to prototype the UI for a web app. I'll be ready for hand-coding by 5PM. #RECOMMENDED", "Not a bad evening, from paper to working @laravelphp prototype, via @divshot, in 45 minutes #goteam", "@divshot is just amazing. Saved me a lot of time already, while building @4stageme :)"]
+
+.tweet
+  %blockquote.twitter-tweet
+    .vcard.author
+      = link_to "#", class: "screen-name url" do
+        %span.avatar
+          = image_tag("blank_user.jpg", class: "photo")
+        %span.fn= user_names[rand(0..2)]
+      = link_to "#", class: "nickname" do
+        %span="##{user_names[rand(0..2)].downcase}"
+    .entry-content
+      %p.entry-title
+        = tweets[rand(0..2)]
+    .footer
+      = link_to '13 Aug 13', "#", class: "view-details"

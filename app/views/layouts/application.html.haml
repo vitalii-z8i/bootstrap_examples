@@ -1,0 +1,161 @@
+!!! 5
+%html.wf-ffdinweb-n3-active.wf-ffdinweb-n6-active.wf-proximanovaalt-n4-active.wf-proximanovaalt-n7-active.wf-active(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title= content_for?(:title) ? yield(:title) : "BootstrapExample"
+    = csrf_meta_tags
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    = stylesheet_link_tag "application", :media => "all"
+    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
+    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
+    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
+    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
+    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
+    = javascript_include_tag "application"
+
+
+  %body
+    %header.navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          .brand.fixed-logo
+            = link_to root_path do
+              = image_tag 'logo.png'
+          .container.nav-collapse
+            %ul.nav.pull-right
+              %li= link_to "Pricing", "/path1"
+              %li= link_to "SUPPORT", "/path2"
+              %li= link_to "BLOG", "/path8"
+              %li= link_to "SIGN UP", "/path3"
+              %li.sign-in= link_to "SIGN IN", "/path4"
+    #main
+      %section#intro.container-fluid
+        .hero-unit
+          %h1 Fast, visual front-end development.
+          %h2 As simple as a mockup tool. As powerful as a text editor.
+          .hero-actions
+            = link_to 'Watch video', '#', class: "btn btn-large"
+            = link_to 'Get started', '#', class: "btn btn-primary btn-large", :'data-placement' => "lander_video"
+          #divshot-screencast.video-js.vjs-default-skin.vjs-paused{ style: "width: 720px; height: 406px;" }
+            %video#divshot-screencast_html5_api.vjs-tech{ preload: "metadata", poster: "http://divshot.com/assets/lander2/video_poster-be553ce3d433ce247926d382940085a9.png", src: "http://a1.divshot.com/videos/lander3.mp4" }
+
+      %section#features.container
+        %h3 Why you’ll love using Divshot
+        #prototyping.row-fluid.feature-left.feature-dark
+          .span7
+            .screenshot
+              = image_tag('feature-prototyping2.png')
+          .span5
+            .feature-content
+              %h4 Prototyping with Bootstrap and beyond
+              %p 
+                We love our frameworks and tools just as much as you love yours. Divshot lets you build visually with most popular front-end frameworks including
+                = link_to "Bootstrap", "http://twitter.github.io/bootstrap/", target: :blank
+                ,
+                = link_to "Foundation", "http://foundation.zurb.com/", target: :blank
+                , and
+                = link_to "Ratchet", "http://maker.github.io/ratchet/", target: :blank
+                \.
+              %p Don't choose between using a visual tool and using the frameworks you love. Just use Divshot!
+              %ul
+                %li Component libraries completely customized for each framework
+                %li Output code that looks just like the framework documentation
+                %li Work with the latest versions of your favorite frameworks
+
+        #visual.row-fluid.feature-right.feature-dark
+          .span5
+            %h4 Visual editing without compromise
+            %p 
+              Tell a developer you're using a visual HTML editor and they'll probably visibly cringe. Not anymore
+            %p
+              Divshot is built from the ground up to have the same standards of quality that we use in our own work. No inline styles, no tag soup, just clean, usable HTML.
+            %ul
+              %li Create interface prototypes in minutes with production-ready HTML
+              %li Work with source code and visual editing tools simultaneously
+              %li Full-powered front-end development. Add JavaScript, CSS, and more to flesh out your app
+          .span7
+            .screenshot
+              = image_tag("feature-visual.png")
+
+        #organization.row-fluid.feature-left.feature-light
+          .span7
+            .screenshot
+              = image_tag("feature-organization.png")
+          .span5
+            %h4 Bring the whole team
+            %p 
+              Divshot lets you work together on projects by creating organizations. Developers, designers, and stakeholders can all have access to a project and watch it evolve.
+            %p 
+              Kill the bottleneck between prototype, design, and development.
+            %ul 
+              %li Separate personal and work projects by creating organizations
+              %li No shared passwords or duplicate accounts
+              %li Control access to who can create and delete projects
+
+      %section#testimonials.container-fluid
+        %h3 Don't just take our word for it.
+        %h4 Here are some of the things our customers have been saying.
+        .container
+          #tweets{ style: "height: 500px;" }
+            .tweetscroller.tweet-columns.masonry{ style: "position: relative; height: 2502px;" }
+              - 50.times do 
+                = render partial: 'layouts/tweet'
+          
+          %iframe{ :allowtransparency => "true", :frameborder => "0", :scrolling => "no", :src => "http://platform.twitter.com/widgets/follow_button.1375828408.html#_=1376911915801&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=divshot&amp;show_count=true&amp;show_screen_name=true&amp;size=l", :class => "twitter-follow-button twitter-follow-button", :title => "Twitter Follow Button", :'data-twttr-rendered' => "true", :style => "width: 266px; height: 28px;" }
+        / .row
+        /   .span9
+        /     = bootstrap_flash
+        /     = yield
+        /   .span3
+        /     .well.sidebar-nav
+        /       %h3 Sidebar
+        /       %ul.nav.nav-list
+        /         %li.nav-header Sidebar
+        /         %li= link_to "Link 1", "/path1"
+        /         %li= link_to "Link 2", "/path2"
+        /         %li= link_to "Link 3", "/path3"
+      %section.bottom-call-to-action.container-fluid
+        %h4 Build the web faster with Divshot.
+        = link_to "Get Started", "some url", class: 'btn btn-primary', :'data-placement' => "lander_bottom"
+    %footer
+      .container
+        .row
+          #site-map.span9
+            %table{ width: '100%'}
+              %thead
+                %tr 
+                  %th Divshot
+                  %th About
+                  %th Support
+                  %th Connect
+              %tbody
+                %tr
+                  %td
+                    %ul 
+                      %li= link_to 'home', '#'
+                      %li= link_to 'Pricing', '#', :'data-placement' => "footer_pricing"
+                      %li= link_to 'Blog', '#'
+                      %li= link_to 'Support', '#'
+                  %td 
+                    %ul 
+                      %li= link_to 'About', '#'
+                      %li= link_to 'Jobs', '#'
+                      %li= link_to 'Press', '#'
+                      %li= link_to 'Privacy Policy', '#'
+                      %li= link_to 'Terms of Service', '#'
+                  %td 
+                    %ul 
+                      %li= link_to 'Contact Us', '#'
+                      %li= link_to 'Documentation', '#'                
+                  %td 
+                    %ul 
+                      %li= link_to 'Twitter', '#'
+                      %li= link_to 'Facebook', '#'
+                      %li= link_to 'GitHub', '#'
+          #credits.span3
+            =image_tag("http://divshot.com/assets/lander/logo-glyph-06202e4eb3f1d63cf93e6a2f810cf838.svg", class: 'glypth', width: "32")
+            %span#copyright © 2013 Divshot, Inc.
