@@ -136,6 +136,81 @@ html {
   line-height: 3rem;
 }
 
+#intro .screencast-info {
+  position: absolute;
+  width: 780px;
+  left: 50%;
+  bottom: 10px;
+  margin-left: -390px;
+}
+
+#intro .screencast-info .description {
+  float: left;
+  text-align: left;
+  margin-top: 6px;
+}
+
+#intro .screencast-info .controls {
+  float: right;
+  text-align: right;
+}
+
+#intro .screencast-info .description p {
+  font-size: 14px;
+  line-height: 17.5px;
+  font-size: 1.4rem;
+  line-height: 1.75rem;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+#intro .screencast-info .controls {
+  float: right;
+  text-align: right;
+}
+
+#intro .screencast-info .controls .time {
+  float: left;
+  width: 60px;
+  margin: 1px 10px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+}
+
+#intro .screencast-info .controls a {
+  display: inline-block;
+  font-family: "Flaticons Solid";
+  color: #0c1f2c;
+  cursor: pointer;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; 
+}
+
+#intro .screencast-info .controls .pause:before {
+  content: "\e186";
+}
+
+#intro .screencast-info .controls .play-normal:before {
+  content: "\e187";
+}
+
+#intro .screencast-info .controls .play-fast:before {
+  content: "\e188";
+}
+
+#intro .screencast-info .controls .play-faster:before {
+  content: "\e189";
+}
+
+#intro .screencast-info .controls a.active {
+  color: white;
+}
+
 #main #features .feature-dark .screenshot:after {
   border-color: #27333E;
   opacity: 0.12;
@@ -207,7 +282,6 @@ p, li {
     background: url("/assets/some-stuff.png") no-repeat scroll 99% 14px transparent;
     margin-left: -800px;
 }
-
 
 #testimonials {
   text-align: center;
@@ -329,28 +403,28 @@ p, li {
 
 @keyframes mooving-twitts {
   10%  { top:0px; }
-  20%  { top:-10px; }
-  30%  { top:500px; }
-  40%  { top: 450px; }
-  50%  { top: 400px; }
-  60%  { top: 350px; }
-  70%  { top: 200px; }
-  80%  { top: 150px; }
-  90%  { top: 100px; }
-  100% { top: 0px; }
+  20%  { top:-50px; }
+  30%  { top:-100px; }
+  40%  { top: -150px; }
+  50%  { top: -200px; }
+  60%  { top: -250px; }
+  70%  { top: -300px; }
+  80%  { top: -350px; }
+  90%  { top: -400px; }
+  100% { top: -450px; }
 }
 
 @-webkit-keyframes mooving-twitts {
   10%  { top:0px; }
-  20%  { top:-10px; }
-  30%  { top:500px; }
-  40%  { top: 450px; }
-  50%  { top: 400px; }
-  60%  { top: 350px; }
-  70%  { top: 200px; }
-  80%  { top: 150px; }
-  90%  { top: 100px; }
-  100% { top: 0px; }
+  20%  { top:-50px; }
+  30%  { top:-100px; }
+  40%  { top: -150px; }
+  50%  { top: -200px; }
+  60%  { top: -250px; }
+  70%  { top: -300px; }
+  80%  { top: -350px; }
+  90%  { top: -400px; }
+  100% { top: -450px; }
 }
 
 .tweet {

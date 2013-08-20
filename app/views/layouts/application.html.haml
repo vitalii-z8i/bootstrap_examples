@@ -38,10 +38,24 @@
           %h1 Fast, visual front-end development.
           %h2 As simple as a mockup tool. As powerful as a text editor.
           .hero-actions
-            = link_to 'Watch video', '#', class: "btn btn-large"
+            = content_tag("a","Watch video", class: "btn btn-large", :'data-action' => "play")
             = link_to 'Get started', '#', class: "btn btn-primary btn-large", :'data-placement' => "lander_video"
-          #divshot-screencast.video-js.vjs-default-skin.vjs-paused{ style: "width: 720px; height: 406px;" }
-            %video#divshot-screencast_html5_api.vjs-tech{ preload: "metadata", poster: "http://divshot.com/assets/lander2/video_poster-be553ce3d433ce247926d382940085a9.png", src: "http://a1.divshot.com/videos/lander3.mp4" }
+          %video#divshot-screencast.video-js.vjs-default-skin{ :preload => "metadata", :width => "720", :height => "406", :poster => "http://divshot.com/assets/lander2/video_poster-be553ce3d433ce247926d382940085a9.png" }
+            %source{ :src => "http://a1.divshot.com/videos/lander3.mp4", :type => 'video/mp4' }
+            %source{ :src => "http://a1.divshot.com/videos/lander3.webm", :type => 'video/webm' }
+            %source{ :src => "http://a1.divshot.com/videos/lander3.ogv", :type => 'video/ogg' }
+
+          .screencast-info
+            .description
+              %p
+                Building a custom lander with 
+                %b Bootstrap.
+            .controls
+              %span.time
+              = link_to '', '', :class => "pause active", :'data-action' => "pause"
+              = link_to '', '', :class => "play-normal", :'data-action' => "play"
+              = link_to '', '', :class => "play-fast", :'data-action' => "play-2x"
+              = link_to '', '', :class => "play-faster", :'data-action' => "play-3x"
 
       %section#features.container
         %h3 Why you’ll love using Divshot
@@ -104,8 +118,6 @@
             .tweetscroller.tweet-columns.masonry{ style: "position: relative; height: 2502px;" }
               - 50.times do 
                 = render partial: 'layouts/tweet'
-          
-          %iframe{ :allowtransparency => "true", :frameborder => "0", :scrolling => "no", :src => "http://platform.twitter.com/widgets/follow_button.1375828408.html#_=1376911915801&amp;id=twitter-widget-0&amp;lang=en&amp;screen_name=divshot&amp;show_count=true&amp;show_screen_name=true&amp;size=l", :class => "twitter-follow-button twitter-follow-button", :title => "Twitter Follow Button", :'data-twttr-rendered' => "true", :style => "width: 266px; height: 28px;" }
         / .row
         /   .span9
         /     = bootstrap_flash
